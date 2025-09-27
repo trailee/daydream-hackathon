@@ -104,10 +104,10 @@ label p2a:
     $ t_points +=1
     $ officer = True
     $ stranger_help = True
-    s "PLEASE, STOP!"
+    s "{i}{size=40}PLEASE, STOP!{/i}"
     r "HEY SHRIMPY, your crustacean ass deaf or something? He said stop."
     dd "Huh? Who do you think you're talking to kid? Do you know what I am? Do you know who I work for?"
-    r "WOW, you're annoying. You think we don't see that big dog on your vest?"
+    r "{size=40}WOW{size=33}, you're annoying. You think we don't see that big dog on your vest?"
     j "Just because you're a DDawg officer doesn't mean you can go around beating everyone up."
     dd "Yes it does. It literally said in my contract that I could beat anyone up without consequences."
     r "You for real?"
@@ -137,7 +137,7 @@ label p2b:
 label ddd:
     scene doffice
     ""
-    "DDAWG HEADQUARTERS"
+    "{b}{size=40}DDAWG HEADQUARTERS{/b}"
     dd "Boss... T-they.."
     d "What's wrong, number 1078? Use your words."
     dd "They made a fool out of me!!"
@@ -178,4 +178,4 @@ label start3:
         j "Rabbi... I don't agree with that."
         j "We could've stopped that! Even if that man did something, I'm sure he wasn't deserving of a beating!"
         j "This isn't right, I can't believe how cold you've become."
-    ""
+    "{b}{size=50}Crash{/b}"
