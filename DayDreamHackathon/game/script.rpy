@@ -9,6 +9,14 @@ define d = Character("Dillon")
 define dd = Character("DDawg Officer")
 define s = Character("Stranger")
 
+#BACKGROUNDS
+image home = "dining"
+image outside = "alley"
+image nd1 = "transition 1"
+image doffice = "office"
+
+#SPRITES
+image person = "character.jpg"
 
 # The game starts here.
 
@@ -31,7 +39,8 @@ label start:
     # These display lines of dialogue.
 
     # BEGINNING SCENE
-    show character
+    scene home
+    show person
     r "I’m so tired today…"
     j "When are you not tired? You should lay back a bit before you work yourself to death."
     r "Listen, I’m doing this to keep my sanity. Trust me, I’m fine."
@@ -75,6 +84,7 @@ label p1b:
 
 label start2:
     #Change to outside background
+    scene outside
     #add beating up sfx
 
     "" #walking
@@ -110,7 +120,7 @@ label p2a:
     j "Yeah, you're right."
     s "Sorry, I don't mean to interupt..."
     s "I just wanted to thank you guys for saving me. I have no doubt he would've killed me if you guys hadn't stepped in."
-    s "I don't have anything on me that I could give, but if you need anything, please don't hesitate to call me."
+    s "I don't have anything on me that I could give you, but if you need anything, please don't hesitate to call me."
     "Obtained BUSINESS CARD"
     s "Have a nice day!"
     jump ddd
@@ -125,6 +135,7 @@ label p2b:
 
 
 label ddd:
+    scene doffice
     ""
     "DDAWG HEADQUARTERS"
     dd "Boss... T-they.."
@@ -141,4 +152,5 @@ label ddd:
     jump start3
 
 label start3:
-    j 
+    scene nd1
+    ""
