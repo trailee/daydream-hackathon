@@ -15,7 +15,7 @@ define s = Character("Stranger")
 label start:
     default t_points = 0
     default officer = False
-    default stranger_house = False
+    default stranger_help = False
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
@@ -91,7 +91,7 @@ label start2:
 label p2a:
     $ t_points +=1
     $ officer = True
-    $ stranger_house = True
+    $ stranger_help = True
     s "PLEASE, STOP!"
     r "HEY SHRIMPY, your crustacean ass deaf or something? He said stop."
     dd "Huh? Who do you think you're talking to kid? Do you know what I am? Do you know who I work for?"
@@ -104,18 +104,21 @@ label p2a:
     dd "You people and your big words. You know what, you guys really piss me off. You'll hear about this from the big boss."
     ""
     j "The big boss? You don't think he'll tell Dillon, right?"
-    r "That guy has got to be like the pleb of all plebs. No way is his complaint reaching Dillon, we have nothing to worry about."
+    r "That guy has got to be like the pleb of all plebs. No way is his complaint reaching Dillon; we have nothing to worry about."
     j "Yeah, you're right."
     s "Sorry, I don't mean to interupt..."
-    s "I just wanted to thank you guys for saving me. I have no doubt he would've killed if you guys hadn't stepped in."
-    s "There's nothing I have on my "
+    s "I just wanted to thank you guys for saving me. I have no doubt he would've killed me if you guys hadn't stepped in."
+    s "I don't have anything on me that I could give, but if you need anything, please don't hesitate to call me."
+    "Obtained BUSINESS CARD"
+    s "Have a nice day!"
     jump start3
 
 
 label p2b:
     r "That is genuinely not my problem. I don't want to involve myself in anything that would put me on Dillon's bad side."
-    j "I guess. I do feel bad, though... That guy problably didn't even do anything"
+    j "I guess. I do feel bad, though... That guy probably didn't even do anything..."
     jump start3
 
 
 label start3:
+    j"testing"
