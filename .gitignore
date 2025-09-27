@@ -1,0 +1,47 @@
+# Ren'Py specific files and folders
+game/saves/
+game/traceback.txt
+game/log.txt
+game/errors.txt
+game/lint.txt
+game/update/
+game/cache/
+game/*.rpa
+game/*.zip
+game/*.tar.bz2
+game/*.tar.gz
+game/*.rar
+game/*.7z
+game/*.exe
+game/*.app
+game/*.dmg
+game/*.deb
+game/*.rpm
+game/*.pak
+game/*.zip.tmp
+game/*.tar.bz2.tmp
+game/*.tar.gz.tmp
+game/*.rar.tmp
+game/*.7z.tmp
+
+# Ren'Py environment files
+launcher.log
+update.log
+renpy.log
+config.pyo
+config.pyc
+options.rpyc
+options.rpym
+options.rpymc
+
+# Operating system and IDE specific files
+.DS_Store
+Thumbs.db
+*.bak
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+build/
+dist/
