@@ -3,14 +3,6 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-init -1 python:
-    def setDialogueOpacity(new_value):
-        def dialogueOpacity(st, at):
-            return Transform("gui/textbox.png", alpha=new_value), None
-        dynamicBackground = DynamicDisplayable(dialogueOpacity)
-
-        setDialogueOpacity(1.0)
-
 define r = Character("Rabbi")
 define j = Character("Jack")
 define d = Character("Dillon")
@@ -162,4 +154,28 @@ label ddd:
 label start3:
     scene nd1
     ""
-
+    scene home
+    r "Thanks for helping me out with my errands yesterday, Jack"
+    j "Yeah, of course."
+    ##serious sprite
+    j "..."
+    j "Something's been on my mind since yesterday."
+    r "What is it? Is it related to DDawgs?"
+    j "Well, sort of..."
+    j "I was thinking about that stranger who was getting beat up by the DDawg officer."
+    if stranger_help == True:
+        $ t_points += 1
+        r "Yeah, same. I'm glad we were there to help them."
+        j "I agree."
+        j "Hey, what you did yesterday was admirable! I know a lot of people who would've just walked away and ignored him."
+        j "I'm glad we're friends, Rabbi!"
+        r "Ditto. I'm pretty sure that officer only backed down because there were two of us, haha."
+    else: 
+        r "Jack, we can't keep dwelling on the past."
+        r "I understand it was hard to walk away from that situation. But in the end, what matters is our own safety."
+        r "You can't keep looking out for others."
+        j "..."
+        j "Rabbi... I don't agree with that."
+        j "We could've stopped that! Even if that man did something, I'm sure he wasn't deserving of a beating!"
+        j "This isn't right, I can't believe how cold you've become."
+    ""
