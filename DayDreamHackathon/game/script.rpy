@@ -11,7 +11,7 @@ define d = Character("Dillon")
 # The game starts here.
 
 label start:
-
+    default t_points = 0
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
@@ -27,6 +27,7 @@ label start:
     # These display lines of dialogue.
 
     # BEGINNING SCENE
+    show character
     r "I’m so tired today…"
     j "When are you not tired? You should lay back a bit before you work yourself to death."
     r "Listen, I’m doing this to keep my sanity. Trust me, I’m fine."
@@ -41,9 +42,30 @@ label start:
 
     menu:
         "Good. I don’t know why they even thought of trying to escape.":
-            j"okay"
+            jump e1p1
         "That’s terrible. There’s got to be something out there they don’t want us to see.":
-            j"what"
+            jump e2p1
 
-        
-    return
+label e1p1:
+    j "Didn't take you to be a wuss haha."
+    r "Shut up, Jack. They knew what'd happen to them if they tried."
+    j "Yikes, okay."
+    r "I need some fresh air, let's go outside."
+    jump start2
+
+
+label e2p1:
+    j "That's what I've been thinking. If they're going to the extent of knocking their heads off for trying to escape, I don't feel safe living here."
+    r "I understand what you mean, but you're not thinking of escaping yourself are you?"
+    j "I mean..."
+    r "Jack. I'm not against that at all. Actually, I think that's very courageous of you. I'm just worried you'd suffer the same consequences as that group."
+    j "Don't worry, Rabbi. If anything, this is just a small thought; I probably wouldn't go through with it."
+    r "Okay, good. Though if you're thinking of actually escaping, I'd be glad to help you out."
+    j "Thanks, I appreciate that a lot."
+    r "Anyway... Enough with the whole government convo, I actually need to go out and run some errands. Want to come with me?"
+    j "Of course, I got nothing else to do."
+    jump start2
+
+label start2:
+    #Change to outside background
+    j"testing"
