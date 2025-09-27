@@ -41,17 +41,17 @@ label start:
     # BEGINNING SCENE
     scene home
     show person
-    r "I’m so tired today…"
+    r "I’m so {i}tired{/i} today…"
     j "When are you not tired? You should lay back a bit before you work yourself to death."
-    r "Listen, I’m doing this to keep my sanity. Trust me, I’m fine."
+    r "Listen, I’m doing this to keep my sanity. Trust me, {w=.5}I’m fine."
     j "Whatever."
-    j "On another note, I saw something on the news today. Some bullshit about the “Mighty Dillon” and his crew."
+    j "On another note, I saw something on the news today.{w=.5} Some bullshit about the “Mighty Dillon” and his crew."
     r "What about them? Every time they’re mentioned on the news they’re up to no good."
-    j "Well, obviously. It makes me astonished knowing people blindly follow AND trust their statements"
+    j "Well, obviously. It makes me astonished knowing people blindly follow {i}AND{/i} trust their statements"
     r "Yeah, a bit braindead in my opinion. What’d the news mention about them?"
     j "RIGHT. It makes me furious how they don’t question anything."
-    r "Okay, we get it. So what’d they do to warrant being broadcasted by the news? "
-    j "There was a group of individuals who attempted to escape the walls. Dhillon ordered his crew to take them out before they could even reach the forest."
+    r "{cps=15}Okay, we get it. {/cps}{w=.75}So what’d they do to warrant being broadcasted by the news? "
+    j "There were a group of individuals who attempted to escape the walls. Dhillon ordered his crew to take them out before they could even reach the forest."
 
     menu:
         "Good. I don’t know why they even thought of trying to escape.":
@@ -121,7 +121,7 @@ label p2a:
     s "Sorry, I don't mean to interupt..."
     s "I just wanted to thank you guys for saving me. I have no doubt he would've killed me if you guys hadn't stepped in."
     s "I don't have anything on me that I could give you, but if you need anything, please don't hesitate to call me."
-    "Obtained BUSINESS CARD"
+    "{size=40}{i}Obtained BUSINESS CARD{/i}"
     s "Have a nice day!"
     jump ddd
 
@@ -137,7 +137,7 @@ label p2b:
 label ddd:
     scene doffice
     ""
-    "{b}{size=40}DDAWG HEADQUARTERS{/b}"
+    "{size=40}{i}DDAWG HEADQUARTERS{/i}"
     dd "Boss... T-they.."
     d "What's wrong, number 1078? Use your words."
     dd "They made a fool out of me!!"
@@ -178,4 +178,7 @@ label start3:
         j "Rabbi... I don't agree with that."
         j "We could've stopped that! Even if that man did something, I'm sure he wasn't deserving of a beating!"
         j "This isn't right, I can't believe how cold you've become."
-    "{b}{size=50}Crash{/b}"
+    "{b}{i}{size=50}Crash{/b}{/i}"
+    "{cps=5}...{/cps}{w=1}{size=50}{i}{b}AHHHHHHHHHHHHHHHHHHHHHHHH!{/i}{/b}"
+    
+    
