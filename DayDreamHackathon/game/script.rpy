@@ -54,7 +54,9 @@ label p1a:
     j "Didn't take you to be a wuss haha."
     r "Shut up, Jack. They knew what'd happen to them if they tried."
     j "Yikes, okay."
-    r "I need some fresh air, let's go outside."
+    r "..."
+    r "I need to go run errands. Would you like to come with me?"
+    j "I guess I have nothing else to do."
     jump start2
 
 
@@ -111,14 +113,32 @@ label p2a:
     s "I don't have anything on me that I could give, but if you need anything, please don't hesitate to call me."
     "Obtained BUSINESS CARD"
     s "Have a nice day!"
-    jump start3
+    jump ddd
 
 
 label p2b:
     r "That is genuinely not my problem. I don't want to involve myself in anything that would put me on Dillon's bad side."
     j "I guess. I do feel bad, though... That guy probably didn't even do anything..."
+    r "Jack, there's no point in feeling bad. We don't even know the guy, he might've done something to tick the officer off."
+    j "..."
     jump start3
 
 
+label ddd:
+    ""
+    "DDAWG HEADQUARTERS"
+    dd "Boss... T-they.."
+    d "What's wrong, number 1078? Use your words."
+    dd "They made a fool out of me!!"
+    dd "Called me shrimpy... told me my trapezoids looked tense!"
+    dd "I'm gonna kill them... I swear... The next time to see them..."
+    d "Now now, we must not be rash. Tell me, who were these people? How did they look?"
+    dd "Ugly ones... Both the same height. I think one had _________"
+    d "Okay. I will take note of this, do not worry. They will be dealt with."
+    dd "Thank you big boss!! I owe you my life and honor."
+    dd "Tomorrow, I will bring you a tasty pie."
+    d "Okay, 1078."
+    jump start3
+
 label start3:
-    j"testing"
+    j 
