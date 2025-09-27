@@ -3,6 +3,14 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+init -1 python:
+    def setDialogueOpacity(new_value):
+        def dialogueOpacity(st, at):
+            return Transform("gui/textbox.png", alpha=new_value), None
+        dynamicBackground = DynamicDisplayable(dialogueOpacity)
+
+        setDialogueOpacity(1.0)
+
 define r = Character("Rabbi")
 define j = Character("Jack")
 define d = Character("Dillon")
@@ -154,3 +162,4 @@ label ddd:
 label start3:
     scene nd1
     ""
+

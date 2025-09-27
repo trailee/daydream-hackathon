@@ -219,7 +219,7 @@ style choice_button_text is button_text
 style choice_vbox:
     xalign 0.5
     ypos 405
-    yanchor 0.5
+    yanchor -0.5
 
     spacing gui.choice_spacing
 
@@ -760,6 +760,8 @@ screen preferences():
                 ## be added here, to add additional creator-defined preferences.
 
             null height (4 * gui.pref_spacing)
+
+            
 
             hbox:
                 style_prefix "slider"
