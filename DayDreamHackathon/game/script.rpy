@@ -61,27 +61,39 @@ label start:
     # BEGINNING SCENE
     play music "audio/background_music.mp3"
     scene home with fade
-    show ra
+    show rabbi
     r "I’m so {i}tired{/i} today…"
+    hide rabbi
     show j_s
     j "When are you not tired? You should lay back a bit before you work yourself to death."
+    hide j_s
+    show rabbi
     r "Listen, I’m doing this to keep my sanity. Trust me, {w=.5}I’m fine."
+    hide rabbi
     show j_s
     j "Whatever."
     hide j_s
     show j_norm
     j "On another note, I saw something on the news today.{w=.5} Some bullshit about the “Mighty Dillon” and his crew."
-    r "What about them? Every time they’re mentioned on the news they’re up to no good."
     hide j_norm
+    show rabbi
+    r "What about them? Every time they’re mentioned on the news they’re up to no good."
+    hide rabbi
     show j_s
     j "Well, obviously. It makes me astonished knowing people blindly follow {i}AND{/i} trust their statements"
+    hide j_s
+    show rabbi
     r "Yeah, a bit braindead in my opinion. What’d the news mention about them?"
+    hide rabbi
+    show j_srs
     j "RIGHT. It makes me furious how they don’t question anything."
+    hide j_srs
+    show rabbi
     r "{cps=15}Okay, we get it. {/cps}{w=.75}So what’d they do to warrant being broadcasted by the news? "
     hide j_s
     show j_norm
     j "There were a group of individuals who attempted to escape the walls. Dillon ordered his crew to take them out before they could even reach the forest."
-
+    hide j_norm
     menu:
         "Good. I don’t know why they even thought of trying to escape.":
             jump p1a
@@ -89,12 +101,22 @@ label start:
             jump p1b
 
 label p1a:
+    show j_happy
     j "Didn't take you to be a wuss, haha."
+    hide j_happy
+    show rabbi
     r "Shut up, Jack. They knew what'd happen to them if they tried."
+    hide rabbi
+    show j_srs
     j "Yikes, okay."
+    hide j_srs
+    show rabbi
     r "..."
     r "I need to go run errands. Would you like to come with me?"
+    hide rabbi
+    show j_norm
     j "I guess I have nothing else to do."
+    hide j_norm
     jump start2
 
 
