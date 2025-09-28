@@ -85,9 +85,9 @@ label start:
     show rabbi
     r "Yeah, a bit braindead in my opinion. What’d the news mention about them?"
     hide rabbi
-    show j_srs
+    show j_s
     j "RIGHT. It makes me furious how they don’t question anything."
-    hide j_srs
+    hide j_s
     show rabbi
     r "{cps=15}Okay, we get it. {/cps}{w=.75}So what’d they do to warrant being broadcasted by the news? "
     hide j_s
@@ -107,9 +107,9 @@ label p1a:
     show rabbi
     r "Shut up, Jack. They knew what'd happen to them if they tried."
     hide rabbi
-    show j_srs
+    show j_s
     j "Yikes, okay."
-    hide j_srs
+    hide j_s
     show rabbi
     r "..."
     r "I need to go run errands. Would you like to come with me?"
@@ -122,9 +122,9 @@ label p1a:
 
 label p1b:
     $ t_points +=1
-    show j_srs
+    show j_s
     j "That's what I've been thinking. If they're going to the extent of knocking their heads off for trying to escape, I don't feel safe living here."
-    hide j_srs
+    hide j_s
     show rabbi
     r "I understand what you mean, but you're not thinking of escaping yourself are you?"
     hide rabbi
@@ -157,10 +157,15 @@ label start2:
     #add beating up sfx
 
     "{size=40}{b}{color=#589c51}OUTSIDE{/b}{/color}" #walking
+    show dd_m
     dd "Shut up and stop resisting."
+    hide dd_m
+    show s_n
     s "YOU CAN'T DO THIS! I DIDN'T DO ANYTHING WRONG!"
+    hide s_n
+    show dd_n
     dd "You're hurting my ears. I better shut you up."
-
+    hide dd_n
     menu: 
         "Help the stranger":
             #stop sfx
@@ -173,33 +178,71 @@ label p2a:
     $ t_points +=1
     $ officer = True
     $ stranger_help = True
+    show s_n
     s "{i}{size=40}PLEASE, STOP!{/i}" with vpunch
+    hide s_n
+    show rabbi
     r "HEY SHRIMPY, your crustacean ass deaf or something? He said stop."
+    hide rabbi
+    show dd_n
     dd "Huh? Who do you think you're talking to kid? Do you know what I am? Do you know who I work for?"
+    hide dd_n
+    show rabbi
     r "{size=40}WOW{size=33}, you're annoying. You think we don't see that big dog on your vest?"
+    hide rabbi
+    show j_s
     j "Just because you're a DDawg officer doesn't mean you can go around beating everyone up."
+    hide j_s
+    show dd_n
     dd "Yes it does. It literally said in my contract that I could beat anyone up without consequences."
+    hide dd_n
+    show rabbi
     r "You for real?"
+    hide rabbi
+    show dd_n
     dd "Ya."
+    hide dd_n
+    show j_n
     j "Okay, well. Beating people up is no good. I'd say you spend your time finding a chiropractor or something. It looks like you've got a lot of tension in your... trapezius?"
+    hide h_n
+    show dd_m
     dd "You people and your big words. You know what, you guys really piss me off. You'll hear about this from the big boss."
+    hide dd_m
     ""
+    show j_n
     j "The big boss? You don't think he'll tell Dillon, right?"
+    hide j_n
+    show rabbi
     r "That guy has got to be like the pleb of all plebs. No way is his complaint reaching Dillon; we have nothing to worry about."
+    hide rabbi 
+    show j_n
     j "Yeah, you're right."
+    hide j_n
+    show s_n
     s "Sorry, I don't mean to interupt..."
+    hide s_n
+    show s_gf
     s "I just wanted to thank you guys for saving me. I have no doubt he would've killed me if you guys hadn't stepped in."
     s "I don't have anything on me that I could give you, but if you need anything, please don't hesitate to call me."
     "{size=40}{i}Obtained BUSINESS CARD{/i}"
     s "Have a nice day!"
+    hide s_gf
     jump ddd
 
 
 label p2b:
+    show rabbi
     r "That is genuinely not my problem. I don't want to involve myself in anything that would put me on Dillon's bad side."
+    hide rabbi
+    show j_s
     j "I guess. I do feel bad, though... That guy probably didn't even do anything..."
+    hide j_s
+    show rabbi
     r "Jack, there's no point in feeling bad. We don't even know the guy, he might've done something to tick the officer off."
+    hide rabbi
+    show j_s
     j "..."
+    hide j_s
     jump start3
 
 
