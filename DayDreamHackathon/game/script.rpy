@@ -90,7 +90,7 @@ label start:
     hide j_s
     show rabbi
     r "{cps=15}Okay, we get it. {/cps}{w=.75}So what’d they do to warrant being broadcasted by the news? "
-    hide j_s
+    hide rabbi
     show j_norm
     j "There were a group of individuals who attempted to escape the walls. Dillon ordered his crew to take them out before they could even reach the forest."
     hide j_norm
@@ -204,7 +204,7 @@ label p2a:
     hide dd_n
     show j_n
     j "Okay, well. Beating people up is no good. I'd say you spend your time finding a chiropractor or something. It looks like you've got a lot of tension in your... trapezius?"
-    hide h_n
+    hide j_n
     show dd_m
     dd "You people and your big words. You know what, you guys really piss me off. You'll hear about this from the big boss."
     hide dd_m
@@ -507,25 +507,28 @@ label p3b:
     show rabbi
     r "Okay, well it was nice seeing you again."
     r "I'd like to take a look around the building."
-
     hide rabbi
+    show j_h
     j "Yeah, that might be beneficial. We'll see you another day, Nick. Stay safe!"
+    hide j_h
+    show s_gf
     n "You guys as well. Have a good one!"
+    hide s_gf
     scene around_warehouse1 with fade
     "{size=40}{b}{color=#589c51}BREAKROOM{/b}{/color}"
     
     show rabbi
     r "See anything around here?"
     hide rabbi
-
+    show j_n
     j "Nah, just some snacks. {w=.5}Want some?"
-    
+    hide j_n
     show rabbi
     r "No, thank you."
     hide rabbi
-
+    show j_h
     j "I feel like a little detective running around the building."
-    
+    hide j_h
     show rabbi
     r "I guess that's what we're kind of doing, haha."
     hide rabbi
@@ -540,21 +543,54 @@ label p3b:
         show rabbi
         r "What is this person talking abou-{w=.3}{nw}"
         hide rabbi
-
+        show j_s
         j "OH MY-{nw}{w=.3}"
-        
+        hide j_s
         show rabbi
         r "DILL-{nw}{w=.3}"
         hide rabbi
-
+        show dillon
         d "So you two were the ones who were causing trouble yesterday."
+        hide dillon
+        show j_s
         j "Are you kidding me? That krill actually complained about us."
+        hide j_s
+        show dillon
+        d "You were quite funny yesterday, green man. Perhaps you'd care to join my team?"
+        hide dillon
+        menu:
+            "Join DDawgs.":
+                jump DDawgs
+            "Decline.":
+                show dillon
+                d "alr I guess one of you gotta die then. You wanna die or Jack?"
+                hide dillon
+                show j_s
+                j "I'm done w this game just kill me."
+                hide j_s
+                show dillon
+                d "wow this sacrifice was needed, it was necessary WOW"
+                hide dillon
+                show j_h
+                j "*dies*"
+                hide j_h
+                "JACK IS SICK OF THIS GAME ENDING"
+                return
         
     else:
         "{size=40}{b}...{/b}"
         show rabbi
         r "Well, I guess they're gone now."
         hide rabbi
+
+label DDawgs:
+    show dillon
+    d "Aight you in gangy"
+    hide dillon
+    show rabbi
+    r "'preciate it"
+    "GANGY ENDING"
+    return
 
 
 label p3c:
@@ -571,7 +607,7 @@ label p3c:
     "{size=40}{b}{color=#589c51}OUTSIDE{/b}{/color}"    
     if stranger_help == True:
         j "So what do we have to do today?"
-        
+
         show rabbi
         r "Well, we're not super busy today but I was thinking of going to get some groceries."
         hide rabbi
