@@ -265,6 +265,8 @@ label p3a:
         s "Anyway, he ran out of breath or something. I think I heard something crack. {w=.5}So he kind of just stopped and walked away."
         j "... {w=1} Well I'm glad he stopped. That could have ended badly."
         s "Yeah, probably."
+
+
 label p3b:
     r "Okay, well it was nice seeing you again."
     r "I'd like to take a look around the building."
