@@ -249,20 +249,36 @@ label p2b:
 label ddd:
     scene doffice with fade
     "{size=40}{b}{color=#589c51}DDAWG HEADQUARTERS{/b}{/color}"
+    show dd_n
     dd "Boss... T-they.."
+    hide dd_n
+    show dillon
     d "What's wrong, number 1078? Use your words."
+    hide dillon
+    show dd_m
     dd "THEY MADE A FOOL OUT OF ME!!" with vpunch
     dd "Called me shrimpy... told me my trapezoids looked tense!"
     dd "I'm gonna kill them... I swear... The next time to see them..."
+    hide dd_m
+    show dillon
     d "Now now, we must not be rash. Tell me, who were these people? How did they look?"
+    hide dillon
+    show dd_n
     dd "Ugly ones... Both the same height."
     dd "I think one had purple eyes, a poo-coloured mullet, and like... purple... Just purple."
     dd "The one that needs to die is green. I think he has brown hair too, but it was tied up."
     dd "Big boss, you can just unfocus your eyes and look for something that resembles barney!"
+    hide dd_n
+    show dillon
     d "Okay. I will take note of this, do not worry. They will be dealt with."
+    hide dillon
+    show dd_n
     dd "Thank you big boss!! I owe you my life and honor."
     dd "Tomorrow, I will bring you a tasty pie."
+    hide dd_n
+    show dillon
     d "Okay, 1078."
+    hide dillon
     jump start3
 
 label start3:
