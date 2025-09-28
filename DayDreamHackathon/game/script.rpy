@@ -375,7 +375,11 @@ label p3c:
                 if t_points >=1:
                     "{size=50}{b}WHACK{/b}" with vpunch
                     scene black
-                    "{size=50}{b}TEXT......{/b}"
+                    r "Glad we got this idiot out of the way."
+                    "{size=40}{i}Your decisions throughout this game led to Jack {b}trusting you{/b}.{/i}"
+                    "{size=40}{i}After having a private call with the Dillon, you were ultimately bribed to out him out and eliminate him.{/i}"
+                    "{size=40}{i}With his trust, you were able to attack him while his guard was down.{/i}"
+                    "{size=40}{i}Maybe next time you can make better decisions to turn the tables.{/i}"
                 else:
                     "{size=50}{b}WHACK{/b}" with vpunch
                     j "Sorry, Rabbi... I just don't think this will work out."
