@@ -122,15 +122,33 @@ label p1a:
 
 label p1b:
     $ t_points +=1
+    show j_srs
     j "That's what I've been thinking. If they're going to the extent of knocking their heads off for trying to escape, I don't feel safe living here."
+    hide j_srs
+    show rabbi
     r "I understand what you mean, but you're not thinking of escaping yourself are you?"
+    hide rabbi
+    show j_norm
     j "I mean..."
+    hide j_norm
+    show rabbi
     r "Jack. I'm not against that at all. Actually, I think that's very courageous of you. I'm just worried you'd suffer the same consequences as that group."
+    hide rabbi
+    show j_happy
     j "Don't worry, Rabbi. If anything, this is just a small thought; I probably wouldn't go through with it."
+    hide j_happy
+    show rabbi
     r "Okay, good. Though if you're thinking of actually escaping, I'd be glad to help you out."
+    hide rabbi
+    show j_happy
     j "Thanks, I appreciate that a lot."
+    hide j_happy
+    show rabbi
     r "Anyway... Enough with the whole government convo, I actually need to go out and run some errands. Want to come with me?"
+    hide rabbi
+    show j_happy
     j "Of course, I got nothing else to do."
+    hide j_happy
     jump start2
 
 label start2:
