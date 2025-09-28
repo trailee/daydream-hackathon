@@ -301,6 +301,14 @@ label p3c:
     scene front
     if stranger_help == True:
         j "So what do we have to do today?"
-
+        r "Well, we're not super busy today but I was thinking of going to get some groceries."
+        j "Oh, we could have talked to that guy for a bit longer then if we weren't in a rush..."
+        r "It's okay, I didn't want to get home too late either."
+        scene outside
+        "{size=40}{b}After purchasing groceries.{/b}"
+        dd "Freakin' pests {w=1}ALL {w=1}AROUND {w=1}ME!"
+        dd "YOU ALL NEED TO DIE!!"
+        j "Why did we go back this way..."
     else:
-        j "I know you did that because you're scared of being associated with him. But it wouldn't have been "
+        j "I know you did that because you're scared of being associated with him. But it wouldn't have been a huge deal if we just a conversation with him."
+        r "I don't care, Jack. Talking to him would have been a waste of our time."
