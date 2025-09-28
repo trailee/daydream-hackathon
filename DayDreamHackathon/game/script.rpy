@@ -22,6 +22,10 @@ image around_warehouse1 = "warehouse_break"
 image around_warehouse2 = "warehouse_control"
 image bk = "black"
 
+#ENDINGS
+image gossip_g = "good_gossip"
+image gossip_b = "bad_gossip"
+
 #SPRITES
 image j_n = "j_norm"
 image j_s = "j_srs"
@@ -37,7 +41,6 @@ image person = "character.jpg"
 
 label start:
     default t_points = 0
-    default officer = False
     default stranger_help = False
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -257,6 +260,7 @@ label start3:
             jump p3c
 
 label p3a:
+    $ t_points +=1
     r "So what happened after we left?"
     if stranger_help == True:
         r "Did he come back or anything?"
@@ -284,6 +288,7 @@ label p3a:
 
 
 label p3b:
+    $ t_points += 1
     r "Okay, well it was nice seeing you again."
     r "I'd like to take a look around the building."
     j "Yeah, that might be beneficial. We'll see you another day, Nick. Stay safe!"
@@ -345,16 +350,40 @@ label p3c:
                 dd "I mean, yeah, I could have done worse... but come, on he's just a kid."
                 dd "Yeah, yeah, haha... Anyway I better head off soon, got to continue working."
                 r "...{w=.3} Interesting..."
-                if stranger_help == True and t_points >=3:
+                if stranger_help == True and t_points >=1:
                     menu:
                         "Call number on BUSINESS CARD.":
                             jump gossip
                         "Leave it be, you don't gossip.":
-                            jump no_gossip
+                            j "Let's not involve ourselves in that..."
+                else:
+                    menu:
+                        "Call number on BUSINESS CARD.":
+                            "{size=40}{b}{color=#589c51}ring ring ring...{/b}{/color}"
+                            n "{i}bzt...{/i} Hey, this is Nick speaking."  
+                            r "Hey, Nick. People who saved you here!"
+                            j "You wanna know the chisme, Nick??"
+                            n "Oh yeah, I'm all for that."
+                            r "The officer from yester-{w=.3}{nw}" with fade
+                            j "The one that wears green... Their name is Rabbi. They hired the DDawg officer to beat "
+                        "Leave it be, you don't gossip.":
+                            j "Let's not involve ourselves in that..."
 
             "Walk away.":
                 j "You tryna head home now?"
                 r "Yeah, I'm getting a bit tired."
+                if t_points >=1:
+                    "{size=50}{b}WHACK{/b}" with vpunch
+                    scene black
+                    "{size=50}{b}TEXT......{/b}"
+                else:
+                    "{size=50}{b}WHACK{/b}" with vpunch
+                    j "Sorry, Rabbi... I just don't think this will work out."
+                    "{size=40}{i}Your decisions throughout this game led to Jack {b}not trusting you{/b}.{/i}"
+                    "{size=40}{i}He believes taking you out is a sacrifice worth taking to keep his freedom and sanity.{/i}"
+                    "{size=40}{i}Maybe next time you can make better decisions to turn the tables.{/i}"
+
+                
 
 label gossip:
     "{size=40}{b}{color=#589c51}ring ring ring...{/b}{/color}"
@@ -366,6 +395,7 @@ label gossip:
     r "Yeah I think you should do something about that."
     n "Yeahhhhh ehhhh no chance fam this goober done mod tingz eh"
     j "*starts frat flicking*"
+    scene gossip_b with fade
 label no_gossip:
     j "So we're just avoiding everything at this point."
     r ""
