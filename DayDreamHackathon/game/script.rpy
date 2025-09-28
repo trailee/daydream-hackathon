@@ -331,50 +331,101 @@ label start3:
         hide j_s
     "{b}{i}{size=50}Crash{/b}{/i}"
     "{cps=5}...{/cps}{w=1}{size=50}{i}{b}AHHHHHHHHHHHHHHHHHHHHHHHH!{/i}{/b}"
-    show j_
+    show j_s
     j "What in the-"
+    hide j_s
+    show rabbi
     r "What happened outside?"
+    hide rabbi
+    show j_s
     j "Let's go check."
-    
+    hide j_s
     scene building with fade
     "{size=40}{b}{color=#589c51}OUTSIDE{/b}{/color}"
+    show j_s
     j "I saw someone run towards that building."
+    hide j_s
+    show rabbi
     r "Are you sure we should check it out?"
     r "I'm pretty sure screaming means something BAD happened."
+    hide rabbi
+    show j_h
     j "Come on, a little curiosity never hurt."
+    hide j_h
+    show rabbi
     r "You know damn well it killed the cat."
+    hide rabbi
+    show j_h
     j "Pish posh, I'm going."
+    hide j_h
+    show rabbi
     r "Okay..."
-
+    hide rabbi
     scene warehouse with fade
     "{size=40}{b}{color=#589c51}WAREHOUSE{/b}{/color}"
     
     if stranger_help == True:
         u "You two!"
+        show j_n
         j "Wha-"
+        hide j_s
+        show s_gf
         s "What a coincidence!"
+        show s_gf
+        show rabbi
         r "Oh, it's you!!"
+        hide rabbi
     else:
         u "..."
+    show rabbi
     r "Are you okay? We heard a loud crash and something screaming."
+    hide rabbi
+    show s_n
     s "Oh, yeah. I think someone put a hit out on me or something."
+    hide s_n
+    show j_s
     j "{size=50}???"
     j "How are you so calm about that?"
+    hide j_s
+    show s_n
     s "Come on, I literally dealt with that DDawg Officer yesterday."
+    hide s_n
     if stranger_help == True:
+        show j_h
         j "Oh yeah, he was a pain. Glad we got him to stop though."
+        hide j_h
+        show s_gf
         s "Yeah, huge thanks to you guys!"
         s "I've been watching those Ip Man movies. Makes me super motivated to beat some punks up!"
+        hide s_gf
+        show rabbi
         r "That's nice, glad you're not traumatized, haha."
+        hide rabbi
     else:
+        show j_s
         j "Sorry we didn't help you yesterday... That DDawg Officer was really intimidating."
+        hide j_s
+        show j_n
         j "If you need any help now, though, we'd be glad to help!"
+        hide j_s
+        show rabbi
         r "I guess, yeah."
+        hide rabbi
+    show s_n
     s "Haha, I'm good."
+    hide s_n
+    show s_gf
     s "Some wall got smashed in, pretty sure they thought I was behind it."
+    hide s_gf
+    show j_s
     j "Holy smokes, dude! That's insane, they tried to kill you!"
+    hide j_s
+    show s_n
     s "Well, I guess the fact I survived after yesterday hurt their egos."
+    hide s_n
+    show rabbi
     r "Dillon and his crew are terrifying..."
+    hide rabbi
 
     menu:
         "Inquire more":
@@ -386,86 +437,176 @@ label start3:
 
 label p3a:
     $ t_points +=1
+    show rabbi
     r "So what happened after we left?"
+    hide rabbi
     if stranger_help == True:
+        show rabbi
         r "Did he come back or anything?"
+        hide rabbi
+        show s_n
         s "Nah, I left right after that. I think I got followed home, though."
+        hide s_n
+        show j_s
         j "{size=50}{i}WHAT???{/i}" with vpunch
+        hide j_s
+        show rabbi
         r "What was your name again?"
+        hide rabbi
+        show s_n
         s "Oh, I forgot to introduce myself, haha!"
+        hide s_n
+        show s_gf
         n "My name is Nick, I work here at the warehouse. Basically move a bunch of boxes around."
+        hide s_gf
+        show j_h
         j "Nice to meet you, Nick!"
         j "My name is Jack."
+        hide j_h
+        show rabbi
         r "And my name is Rabbi, nice to meet you."
+        hide rabbi
+        show s_gf
         s "Great! Now I know the names of my saviors!"
+        hide s_gf
+        show rabbi
         r "I don't even know if we're saviors or not since they're trying to assassinate you now."
+        hide rabbi
+        show s_n
         s "Oh, don't worry about that! It's definitely not your fault."
+        hide s_n
     else:
+        show s_n
         s "Well, he did keep beating me up and stuff."
+        hide s_n
+        show j_s
         j "Again, sorry about that..."
+        hide j_s
+        show s_n
         s "No, don't worry about that!"
+        hide s_n
+        show j_n
         j "We forgot to introduce ourselves, by the way."
         j "My name is Jack."
+        hide j_n
+        show rabbi
         r "My name is Rabbi..."
+        hide rabbi
+        show s_n
         s "Anyway, he ran out of breath or something. I think I heard something crack. {w=.5}So he kind of just stopped and walked away."
+        hide s_n
+        show j_s
         j "... {w=1} Well I'm glad he stopped. That could have ended badly."
+        hide j_s
+        show s_n
         s "Yeah, probably."
-
+        hide s_n
 
 label p3b:
     $ t_points += 1
+    show rabbi
     r "Okay, well it was nice seeing you again."
     r "I'd like to take a look around the building."
+
+    hide rabbi
     j "Yeah, that might be beneficial. We'll see you another day, Nick. Stay safe!"
     n "You guys as well. Have a good one!"
     scene around_warehouse1 with fade
     "{size=40}{b}{color=#589c51}BREAKROOM{/b}{/color}"
+    
+    show rabbi
     r "See anything around here?"
+    hide rabbi
+
     j "Nah, just some snacks. {w=.5}Want some?"
+    
+    show rabbi
     r "No, thank you."
+    hide rabbi
+
     j "I feel like a little detective running around the building."
+    
+    show rabbi
     r "I guess that's what we're kind of doing, haha."
+    hide rabbi
+
     scene around_warehouse2 with fade
     "{size=40}{b}{color=#589c51}CONTROL ROOM{/b}{/color}"
     u "..."
     j "Oops, didn't think there were people still in here."
     if stranger_help ==  True:
         u "Purple and green... Like barney..?"
+        
+        show rabbi
         r "What is this person talking abou-{w=.3}{nw}"
+        hide rabbi
+
         j "OH MY-{nw}{w=.3}"
+        
+        show rabbi
         r "DILL-{nw}{w=.3}"
+        hide rabbi
+
         d "So you two were the ones who were causing trouble yesterday."
         j "Are you kidding me? That krill actually complained about us."
+        
     else:
         "{size=40}{b}...{/b}"
+        show rabbi
         r "Well, I guess they're gone now."
+        hide rabbi
 
 
 label p3c:
+    show rabbi
     r "Okay, well, it was nice seeing you again. However we have things to attend to, so we have to go now."
+    hide rabbi
+
     s "Awe, what a shame! I wanted to tell you guys about yesterday."
     j "Hey, we have s-{w=.3}{nw}"
+    
+    show rabbi
     r "No, sorry we have to go now."
     scene front
     "{size=40}{b}{color=#589c51}OUTSIDE{/b}{/color}"    
     if stranger_help == True:
         j "So what do we have to do today?"
+        
+        show rabbi
         r "Well, we're not super busy today but I was thinking of going to get some groceries."
+        hide rabbi
+
         j "Oh, we could have talked to that guy for a bit longer then if we weren't in a rush..."
+        
+        show rabbi
         r "It's okay, I didn't want to get home too late either."
+        hide rabbi
+
         scene outside with fade
         "{size=40}{b}After purchasing groceries.{/b}"
         dd "{size=40}{b}Freakin' pests ALL {w=.5}AROUND {w=.5}ME!{/b}"
         dd "{size=40}{b}YOU ALL NEED TO DIE!!{/b}"
         j "Why did we go back this way..."
+        
+        show rabbi
         r "I forgot about him..."
+        hide rabbi
+
         dd "{size=50}{b}{cps=25}YOU BARNEYS!!{/b}" with vpunch
+        
+        show rabbi
         r "I think we should run."
+        hide rabbi
+
         j "Yeah, definitely."
         dd "{size=50}{b}{cps=25}I'LL KILL YOU BOTH, I SWEAR!!{/b}" with vpunch
     else:
         j "I know you did that because you're scared of being associated with him. But it wouldn't have been a huge deal if we just had a conversation with him."
+        
+        show rabbi
         r "I don't care, Jack. Talking to him would have been a waste of our time."
+        hide rabbi
+
         menu:
             "You notice the same DDawg Officer from yesterday talking on the phone."
             "Listen in.":
@@ -474,6 +615,8 @@ label p3c:
                 dd "Yeah, but I put him in a chokehold and left him on the street."
                 dd "I mean, yeah, I could have done worse... but come, on he's just a kid."
                 dd "Yeah, yeah, haha... Anyway I better head off soon, got to continue working."
+                
+                show rabbi
                 r "...{w=.3} Interesting..."
                 if stranger_help == True and t_points >=1:
                     menu:
@@ -486,12 +629,24 @@ label p3c:
                         "Call number on BUSINESS CARD.":
                             "{size=40}{b}{color=#589c51}ring ring ring...{/b}{/color}"
                             n "{i}bzt...{/i} Hey, this is Nick speaking."  
+                            
+                            show rabbi
                             r "Hey, Nick. People who saved you here!"
+                            hide rabbi
+
                             j "You wanna know the chisme, Nick??"
                             n "Oh yeah, I'm all for that."
+                            
+                            show rabbi
                             r "The officer from yester-{w=.3}{nw}" with fade
+                            hide rabbi
+
                             j "The one that wears green... Their name is Rabbi. They hired the DDawg officer to beat you up."
+                            
+                            show rabbi
                             r "Jack, what are you sayi-{w=.3}"
+                            hide rabbi
+
                             j "They're outside right now. I packed them up for you."
                             jump jack
                         "Leave it be, you don't gossip.":
@@ -499,7 +654,10 @@ label p3c:
 
             "Walk away.":
                 j "You tryna head home now?"
+                
+                show rabbi
                 r "Yeah, I'm getting a bit tired."
+                hide rabbi
                 if t_points >=1:
                     "{size=50}{b}WHACK{/b}" with vpunch
                     scene black
@@ -512,17 +670,27 @@ label p3c:
 label gossip:
     "{size=40}{b}{color=#589c51}ring ring ring...{/b}{/color}"
     n "{i}bzt...{/i} Hey, this is Nick speaking."  
+    
+    show rabbi
     r "Hey, Nick. People who saved you here!"
+    hide rabbi
+
     j "You wanna know the chisme, Nick??"
     n "Oh yeah, I'm all for that."
     j "Mister DDawg is over here. Talking mad diss about you."
+    
+    show rabbi
     r "Yeah I think you should do something about that."
+    hide rabbi
+
     n "Yeahhhhh ehhhh no chance fam this goober done mod tingz eh"
     j "*starts frat flicking*"
     scene gossip_g with fade
 
 label jack:
+    show rabbi
     r "Glad we got this idiot out of the way."
+    hide rabbi
     "{size=40}{i}Your decisions throughout this game led to Jack {b}trusting you{/b}.{/i}"
     "{size=40}{i}After having a private call with the Dillon, you were ultimately bribed to out him out and eliminate him.{/i}"
     "{size=40}{i}With his trust, you were able to attack him while his guard was down.{/i}"
@@ -531,7 +699,9 @@ label jack:
 
 label rabbi:
     "{size=50}{b}WHACK{/b}" with vpunch
+    show j_s
     j "Sorry, Rabbi... I just don't think this will work out."
+    hide j_s
     "{size=40}{i}Your decisions throughout this game led to Jack {b}not trusting you{/b}.{/i}"
     "{size=40}{i}He believes taking you out is a sacrifice worth taking to keep his freedom and sanity.{/i}"
     "{size=40}{i}Maybe next time you can make better decisions to turn the tables.{/i}"
