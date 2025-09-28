@@ -3,17 +3,23 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define r = Character("Rabbi")
+define r = Character("Rabbi", color="#e5f011")
 define j = Character("Jack")
-define d = Character("Dillon")
-define dd = Character("DDawg Officer")
-define s = Character("Stranger")
+define d = Character("Dillon", color="#854d2a")
+define dd = Character("DDawg Officer", color="#485096")
+define s = Character("Stranger", color="#ffffff")
+define n = Character("Nick", color="#308f1d")
+define u = Character("???", color="#8f2727")
 
 #BACKGROUNDS
 image home = "dining"
 image outside = "alley"
 image nd1 = "transition 1"
 image doffice = "office"
+image building = "front"
+image warehouse = "warehouse_floor"
+image around_warehouse1 = "warehouse_break"
+image around_warehouse2 = "warehouse_control"
 
 #SPRITES
 image person = "character.jpg"
@@ -51,7 +57,7 @@ label start:
     r "Yeah, a bit braindead in my opinion. What’d the news mention about them?"
     j "RIGHT. It makes me furious how they don’t question anything."
     r "{cps=15}Okay, we get it. {/cps}{w=.75}So what’d they do to warrant being broadcasted by the news? "
-    j "There were a group of individuals who attempted to escape the walls. Dhillon ordered his crew to take them out before they could even reach the forest."
+    j "There were a group of individuals who attempted to escape the walls. Dillon ordered his crew to take them out before they could even reach the forest."
 
     menu:
         "Good. I don’t know why they even thought of trying to escape.":
@@ -60,7 +66,7 @@ label start:
             jump p1b
 
 label p1a:
-    j "Didn't take you to be a wuss haha."
+    j "Didn't take you to be a wuss, haha."
     r "Shut up, Jack. They knew what'd happen to them if they tried."
     j "Yikes, okay."
     r "..."
@@ -144,7 +150,10 @@ label ddd:
     dd "Called me shrimpy... told me my trapezoids looked tense!"
     dd "I'm gonna kill them... I swear... The next time to see them..."
     d "Now now, we must not be rash. Tell me, who were these people? How did they look?"
-    dd "Ugly ones... Both the same height. I think one had _________"
+    dd "Ugly ones... Both the same height."
+    dd "I think one had purple eyes, a poo-coloured mullet, and like... purple... Just purple."
+    dd "The one that needs to die is green. I think he has brown hair too, but it was tied up."
+    dd "Big boss, you can just unfocus your eyes and look for something that resembles barney!"
     d "Okay. I will take note of this, do not worry. They will be dealt with."
     dd "Thank you big boss!! I owe you my life and honor."
     dd "Tomorrow, I will bring you a tasty pie."
@@ -180,5 +189,103 @@ label start3:
         j "This isn't right, I can't believe how cold you've become."
     "{b}{i}{size=50}Crash{/b}{/i}"
     "{cps=5}...{/cps}{w=1}{size=50}{i}{b}AHHHHHHHHHHHHHHHHHHHHHHHH!{/i}{/b}"
+    j "What in the-"
+    r "What happened outside?"
+    j "Let's go check."
     
+    scene building
+    j "I saw someone run towards that building."
+    r "Are you sure we should check it out?"
+    r "I'm pretty sure screaming means something BAD happened."
+    j "Come on, a little curiosity never hurt."
+    r "You know damn well it killed the cat."
+    j "Pish posh, I'm going."
+    r "Okay..."
+
+    scene warehouse
+    ""
     
+    if stranger_help == True:
+        u "You two!"
+        j "Wha-"
+        s "What a coincidence!"
+        r "Oh, it's you!!"
+    else:
+        u "..."
+    r "Are you okay? We heard a loud crash and something screaming."
+    s "Oh, yeah. I think someone put a hit out on me or something."
+    j "{size=50}???"
+    j "How are you so calm about that?"
+    s "Come on, I literally dealt with that DDawg Officer yesterday."
+    if stranger_help == True:
+        j "Oh yeah, he was a pain. Glad we got him to stop though."
+        s "Yeah, huge thanks to you guys!"
+        s "I've been watching those Ip Man movies. Makes me super motivated to beat some punks up!"
+        r "That's nice, glad you're not traumatized, haha."
+    else:
+        j "Sorry we didn't help you yesterday... That DDawg Officer was really intimidating."
+        j "If you need any help now, though, we'd be glad to help!"
+        r "I guess, yeah."
+    s "Haha, I'm good."
+    s "Some wall got smashed in, pretty sure they thought I was behind it."
+    j "Holy smokes, dude! That's insane, they tried to kill you!"
+    s "Well, I guess the fact I survived after yesterday hurt their egos."
+    r "Dillon and his crew are terrifying..."
+
+    menu:
+        "Inquire more":
+            jump p3a
+        "Walk around the building":
+            jump p3b
+        "Leave building":
+            jump p3c
+
+label p3a:
+    r "So what happened after we left?"
+    if stranger_help == True:
+        r "Did he come back or anything?"
+        s "Nah, I left right after that. I think I got followed home, though."
+        j "{size=50}{i}WHAT???{/i}"
+        r "What was your name again?"
+        s "Oh, I forgot to introduce myself, haha!"
+        n "My name is Nick, I work here at the warehouse. Basically move a bunch of boxes around."
+        j "Nice to meet you, Nick!"
+        j "My name is Jack."
+        r "And my name is Rabbi, nice to meet you."
+        s "Great! Now I know the names of my saviors!"
+        r "I don't even know if we're saviors or not since they're trying to assassinate you now."
+        s "Oh, don't worry about that! It's definitely not your fault."
+    else:
+        s "Well, he did keep beating me up and stuff."
+        j "Again, sorry about that..."
+        s "No, don't worry about that!"
+        j "We forgot to introduce ourselves, by the way."
+        j "My name is Jack."
+        r "My name is Rabbi..."
+        s "Anyway, he ran out of breath or something. I think I heard something crack. {w=.5}So he kind of just stopped and walked away."
+        j "... {w=1} Well I'm glad he stopped. That could have ended badly."
+        s "Yeah, probably."
+label p3b:
+    r "Okay, well it was nice seeing you again."
+    r "I'd like to take a look around the building."
+    j "Yeah, that might be beneficial. We'll see you another day, Nick. Stay safe!"
+    n "You guys as well. Have a good one!"
+    scene around_warehouse1
+    ""
+    r "See anything around here?"
+    j "Nah, just some snacks. {w=.5}Want some?"
+    r "No, thank you."
+    j "I feel like a little detective running around the building."
+    r "I guess that's what we're kind of doing, haha."
+    scene around_warehouse2
+    ""
+    u "..."
+    j "Oops, didn't think there were people still in here."
+    u "Purple and green... Like barney?"
+
+
+label p3c:
+    r "Okay, well, it was nice seeing you again. However we have things to attend to, so we have to go now."
+    s "Awe, what a shame! I wanted to tell you guys about yesterday."
+    j "Hey, we have s-{w=.3}{nw}"
+    r "No, sorry we have to go now."
