@@ -318,9 +318,15 @@ label p3c:
         j "Yeah, definitely."
         dd "{size=50}{b}{cps=25}I'LL KILL YOU BOTH, I SWEAR!!{/b}" with vpunch
     else:
-        dd "Yeah, what a guy!"
-        dd "I know, and then "
-
-    else:
+        menu:
+            "You notice the same DDawg Officer from yesterday talking on the phone."
+            "Listen in.":
+                dd "...{w=.3}Yeah, what a guy!"
+                dd "I know, and then guess what! That kid took out a knife and tried swinging at me."
+                dd "Yeah, but I put him in a chokehold and left him on the street."
+                dd "I mean, yeah, I could have done worse... but come, on he's just a kid."
+                dd "Yeah, yeah, haha... Anyway I better head off soon, got to continue working."
+            "Walk away.":
+                r "You tryna head home now?"
         j "I know you did that because you're scared of being associated with him. But it wouldn't have been a huge deal if we just had a conversation with him."
         r "I don't care, Jack. Talking to him would have been a waste of our time."
