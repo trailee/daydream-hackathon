@@ -54,7 +54,6 @@ label start:
 
     # BEGINNING SCENE
     scene home with fade
-    show person
     r "I’m so {i}tired{/i} today…"
     show j_s
     j "When are you not tired? You should lay back a bit before you work yourself to death."
@@ -334,6 +333,8 @@ label p3c:
         j "Yeah, definitely."
         dd "{size=50}{b}{cps=25}I'LL KILL YOU BOTH, I SWEAR!!{/b}" with vpunch
     else:
+        j "I know you did that because you're scared of being associated with him. But it wouldn't have been a huge deal if we just had a conversation with him."
+        r "I don't care, Jack. Talking to him would have been a waste of our time."
         menu:
             "You notice the same DDawg Officer from yesterday talking on the phone."
             "Listen in.":
@@ -344,5 +345,3 @@ label p3c:
                 dd "Yeah, yeah, haha... Anyway I better head off soon, got to continue working."
             "Walk away.":
                 r "You tryna head home now?"
-        j "I know you did that because you're scared of being associated with him. But it wouldn't have been a huge deal if we just had a conversation with him."
-        r "I don't care, Jack. Talking to him would have been a waste of our time."
