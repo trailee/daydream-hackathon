@@ -22,6 +22,14 @@ image around_warehouse1 = "warehouse_break"
 image around_warehouse2 = "warehouse_control"
 
 #SPRITES
+image j_n = "j_norm"
+image j_s = "j_srs"
+image j_h = "j_happy"
+image s_gf = "s_grateful"
+image s_n = "s_norm"
+image dd_n = "dd_norm"
+image dd_m = "dd_mad"
+
 image person = "character.jpg"
 
 # The game starts here.
@@ -48,15 +56,23 @@ label start:
     scene home with fade
     show person
     r "I’m so {i}tired{/i} today…"
+    show j_s
     j "When are you not tired? You should lay back a bit before you work yourself to death."
     r "Listen, I’m doing this to keep my sanity. Trust me, {w=.5}I’m fine."
+    show j_s
     j "Whatever."
+    hide j_s
+    show j_norm
     j "On another note, I saw something on the news today.{w=.5} Some bullshit about the “Mighty Dillon” and his crew."
     r "What about them? Every time they’re mentioned on the news they’re up to no good."
+    hide j_norm
+    show j_s
     j "Well, obviously. It makes me astonished knowing people blindly follow {i}AND{/i} trust their statements"
     r "Yeah, a bit braindead in my opinion. What’d the news mention about them?"
     j "RIGHT. It makes me furious how they don’t question anything."
     r "{cps=15}Okay, we get it. {/cps}{w=.75}So what’d they do to warrant being broadcasted by the news? "
+    hide j_s
+    show j_norm
     j "There were a group of individuals who attempted to escape the walls. Dillon ordered his crew to take them out before they could even reach the forest."
 
     menu:
