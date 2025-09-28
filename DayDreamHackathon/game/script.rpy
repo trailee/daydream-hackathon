@@ -34,6 +34,8 @@ image s_gf = "s_grateful"
 image s_n = "s_norm"
 image dd_n = "dd_norm"
 image dd_m = "dd_mad"
+image rabbi = "rabbii"
+image dillon = "dillonn"
 
 image person = "character.jpg"
 
@@ -59,6 +61,7 @@ label start:
     # BEGINNING SCENE
     play music "audio/background_music.mp3"
     scene home with fade
+    show ra
     r "I’m so {i}tired{/i} today…"
     show j_s
     j "When are you not tired? You should lay back a bit before you work yourself to death."
