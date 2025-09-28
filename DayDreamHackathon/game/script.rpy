@@ -57,6 +57,7 @@ label start:
     # These display lines of dialogue.
 
     # BEGINNING SCENE
+    play music "audio/background_music.mp3"
     scene home with fade
     r "I’m so {i}tired{/i} today…"
     show j_s
@@ -368,7 +369,7 @@ label p3c:
                             j "The one that wears green... Their name is Rabbi. They hired the DDawg officer to beat you up."
                             r "Jack, what are you sayi-{w=.3}"
                             j "They're outside right now. I packed them up for you."
-                            jump 
+                            jump jack
                         "Leave it be, you don't gossip.":
                             j "Let's not involve ourselves in that..."
 
