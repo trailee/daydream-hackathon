@@ -101,9 +101,9 @@ label start:
             jump p1b
 
 label p1a:
-    show j_happy
+    show j_h
     j "Didn't take you to be a wuss, haha."
-    hide j_happy
+    hide j_h
     show rabbi
     r "Shut up, Jack. They knew what'd happen to them if they tried."
     hide rabbi
@@ -134,21 +134,21 @@ label p1b:
     show rabbi
     r "Jack. I'm not against that at all. Actually, I think that's very courageous of you. I'm just worried you'd suffer the same consequences as that group."
     hide rabbi
-    show j_happy
+    show j_h
     j "Don't worry, Rabbi. If anything, this is just a small thought; I probably wouldn't go through with it."
-    hide j_happy
+    hide j_h
     show rabbi
     r "Okay, good. Though if you're thinking of actually escaping, I'd be glad to help you out."
     hide rabbi
-    show j_happy
+    show j_h
     j "Thanks, I appreciate that a lot."
-    hide j_happy
+    hide j_h
     show rabbi
     r "Anyway... Enough with the whole government convo, I actually need to go out and run some errands. Want to come with me?"
     hide rabbi
-    show j_happy
+    show j_h
     j "Of course, I got nothing else to do."
-    hide j_happy
+    hide j_h
     jump start2
 
 label start2:
@@ -285,31 +285,53 @@ label start3:
     scene nd1 with fade
     ""
     scene home with fade
+    show rabbi
     r "Thanks for helping me out with my errands yesterday, Jack"
+    hide rabbi
+    show j_h
     j "Yeah, of course."
-    ##serious sprite
+    hide j_h
+    show j_s
     j "..."
     j "Something's been on my mind since yesterday."
+    hide j_s
+    show rabbi
     r "What is it? Is it related to DDawgs?"
+    hide rabbi
+    show j_s
     j "Well, sort of..."
     j "I was thinking about that stranger who was getting beat up by the DDawg officer."
+    hide j_s
     if stranger_help == True:
         $ t_points += 1
+        show rabbi
         r "Yeah, same. I'm glad we were there to help them."
+        hide rabbi
+        show j_n
         j "I agree."
+        hide j_n
+        show j_h
         j "Hey, what you did yesterday was admirable! I know a lot of people who would've just walked away and ignored him."
         j "I'm glad we're friends, Rabbi!"
+        hide j_h
+        show rabbi
         r "Ditto. I'm pretty sure that officer only backed down because there were two of us, haha."
+        hide rabbi
     else: 
+        show rabbi
         r "Jack, we can't keep dwelling on the past."
         r "I understand it was hard to walk away from that situation. But in the end, what matters is our own safety."
         r "You can't keep looking out for others."
+        hide rabbi
+        show j_s
         j "..."
         j "Rabbi... I don't agree with that."
         j "We could've stopped that! Even if that man did something, I'm sure he wasn't deserving of a beating!"
         j "This isn't right, I can't believe how cold you've become."
+        hide j_s
     "{b}{i}{size=50}Crash{/b}{/i}"
     "{cps=5}...{/cps}{w=1}{size=50}{i}{b}AHHHHHHHHHHHHHHHHHHHHHHHH!{/i}{/b}"
+    show j_
     j "What in the-"
     r "What happened outside?"
     j "Let's go check."
