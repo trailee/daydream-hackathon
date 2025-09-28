@@ -407,7 +407,7 @@ label start3:
         hide j_s
         show j_n
         j "If you need any help now, though, we'd be glad to help!"
-        hide j_s
+        hide j_n
         show rabbi
         r "I guess, yeah."
         hide rabbi
@@ -574,7 +574,7 @@ label p3b:
                 show j_h
                 j "*dies*"
                 hide j_h
-                "JACK IS SICK OF THIS GAME ENDING"
+                "{size=40}{i}JACK IS SICK OF THIS GAME ENDING{/b}.{/i}"
                 return
         
     else:
@@ -589,7 +589,7 @@ label DDawgs:
     hide dillon
     show rabbi
     r "'preciate it"
-    "GANGY ENDING"
+    "{size=40}{i}GANGY ENDING{/b}.{/i}"
     return
 
 
