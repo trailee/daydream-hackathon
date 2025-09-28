@@ -20,6 +20,7 @@ image building = "front"
 image warehouse = "warehouse_floor"
 image around_warehouse1 = "warehouse_break"
 image around_warehouse2 = "warehouse_control"
+image bk = "black"
 
 #SPRITES
 image j_n = "j_norm"
@@ -343,5 +344,28 @@ label p3c:
                 dd "Yeah, but I put him in a chokehold and left him on the street."
                 dd "I mean, yeah, I could have done worse... but come, on he's just a kid."
                 dd "Yeah, yeah, haha... Anyway I better head off soon, got to continue working."
+                r "...{w=.3} Interesting..."
+                if stranger_help == True and t_points >=3:
+                    menu:
+                        "Call number on BUSINESS CARD.":
+                            jump gossip
+                        "Leave it be, you don't gossip.":
+                            jump no_gossip
+
             "Walk away.":
-                r "You tryna head home now?"
+                j "You tryna head home now?"
+                r "Yeah, I'm getting a bit tired."
+
+label gossip:
+    "{size=40}{b}{color=#589c51}ring ring ring...{/b}{/color}"
+    n "{i}bzt...{/i} Hey, this is Nick speaking."  
+    r "Hey, Nick. People who saved you here!"
+    j "You wanna know the chisme, Nick??"
+    n "Oh yeah, I'm all for that."
+    j "Mister DDawg is over here. Talking mad diss about you."
+    r "Yeah I think you should do something about that."
+    n "Yeahhhhh ehhhh no chance fam this goober done mod tingz eh"
+    j "*starts frat flicking*"
+label no_gossip:
+    j "So we're just avoiding everything at this point."
+    r ""
