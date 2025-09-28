@@ -281,7 +281,16 @@ label p3b:
     ""
     u "..."
     j "Oops, didn't think there were people still in here."
-    u "Purple and green... Like barney?"
+    if stranger_help ==  True:
+        u "Purple and green... Like barney..?"
+        r "What is this person talking abou-{w=.3}{nw}"
+        j "OH MY-{nw}{w=.3}"
+        r "DILL-{nw}{w=.3}"
+        d "So you two were the ones who were causing trouble yesterday."
+        j "Are you kidding me? That krill actually complained about us."
+    else:
+        "{size=40}{b}...{/b}"
+        r "Well, I guess they're gone now."
 
 
 label p3c:
@@ -289,3 +298,9 @@ label p3c:
     s "Awe, what a shame! I wanted to tell you guys about yesterday."
     j "Hey, we have s-{w=.3}{nw}"
     r "No, sorry we have to go now."
+    scene front
+    if stranger_help == True:
+        j "So what do we have to do today?"
+
+    else:
+        j "I know you did that because you're scared of being associated with him. But it wouldn't have been "
