@@ -45,7 +45,7 @@ label start:
     # These display lines of dialogue.
 
     # BEGINNING SCENE
-    scene home
+    scene home with fade
     show person
     r "I’m so {i}tired{/i} today…"
     j "When are you not tired? You should lay back a bit before you work yourself to death."
@@ -90,10 +90,10 @@ label p1b:
 
 label start2:
     #Change to outside background
-    scene outside
+    scene outside with fade
     #add beating up sfx
 
-    "" #walking
+    "{size=40}{b}{color=#589c51}Outside.{/b}{/color}" #walking
     dd "Shut up and stop resisting."
     s "YOU CAN'T DO THIS! I DIDN'T DO ANYTHING WRONG!"
     dd "You're hurting my ears. I better shut you up."
@@ -110,7 +110,7 @@ label p2a:
     $ t_points +=1
     $ officer = True
     $ stranger_help = True
-    s "{i}{size=40}PLEASE, STOP!{/i}"
+    s "{i}{size=40}PLEASE, STOP!{/i}" with vpunch
     r "HEY SHRIMPY, your crustacean ass deaf or something? He said stop."
     dd "Huh? Who do you think you're talking to kid? Do you know what I am? Do you know who I work for?"
     r "{size=40}WOW{size=33}, you're annoying. You think we don't see that big dog on your vest?"
@@ -141,12 +141,12 @@ label p2b:
 
 
 label ddd:
-    scene doffice
+    scene doffice with fade
     ""
-    "{size=40}{i}DDAWG HEADQUARTERS{/i}"
+    "{size=40}{b}{color=#589c51}DDAWG HEADQUARTERS{/b}{/color}"
     dd "Boss... T-they.."
     d "What's wrong, number 1078? Use your words."
-    dd "They made a fool out of me!!"
+    dd "THEY MADE A FOOL OUT OF ME!!" with vpunch
     dd "Called me shrimpy... told me my trapezoids looked tense!"
     dd "I'm gonna kill them... I swear... The next time to see them..."
     d "Now now, we must not be rash. Tell me, who were these people? How did they look?"
@@ -161,9 +161,9 @@ label ddd:
     jump start3
 
 label start3:
-    scene nd1
+    scene nd1 with fade
     ""
-    scene home
+    scene home with fade
     r "Thanks for helping me out with my errands yesterday, Jack"
     j "Yeah, of course."
     ##serious sprite
@@ -193,7 +193,8 @@ label start3:
     r "What happened outside?"
     j "Let's go check."
     
-    scene building
+    scene building with fade
+    "{size=40}{b}{color=#589c51}Outside.{/b}{/color}"
     j "I saw someone run towards that building."
     r "Are you sure we should check it out?"
     r "I'm pretty sure screaming means something BAD happened."
@@ -202,8 +203,8 @@ label start3:
     j "Pish posh, I'm going."
     r "Okay..."
 
-    scene warehouse
-    ""
+    scene warehouse with fade
+    "{size=40}{b}{color=#589c51}Warehouse.{/b}{/color}"
     
     if stranger_help == True:
         u "You two!"
@@ -245,7 +246,7 @@ label p3a:
     if stranger_help == True:
         r "Did he come back or anything?"
         s "Nah, I left right after that. I think I got followed home, though."
-        j "{size=50}{i}WHAT???{/i}"
+        j "{size=50}{i}WHAT???{/i}" with vpunch
         r "What was your name again?"
         s "Oh, I forgot to introduce myself, haha!"
         n "My name is Nick, I work here at the warehouse. Basically move a bunch of boxes around."
@@ -272,15 +273,15 @@ label p3b:
     r "I'd like to take a look around the building."
     j "Yeah, that might be beneficial. We'll see you another day, Nick. Stay safe!"
     n "You guys as well. Have a good one!"
-    scene around_warehouse1
-    ""
+    scene around_warehouse1 with fade
+    "{size=40}{b}{color=#589c51}Breakroom.{/b}{/color}"
     r "See anything around here?"
     j "Nah, just some snacks. {w=.5}Want some?"
     r "No, thank you."
     j "I feel like a little detective running around the building."
     r "I guess that's what we're kind of doing, haha."
-    scene around_warehouse2
-    ""
+    scene around_warehouse2 with fade
+    "{size=40}{b}{color=#589c51}Control room.{/b}{/color}"
     u "..."
     j "Oops, didn't think there were people still in here."
     if stranger_help ==  True:
@@ -306,11 +307,17 @@ label p3c:
         r "Well, we're not super busy today but I was thinking of going to get some groceries."
         j "Oh, we could have talked to that guy for a bit longer then if we weren't in a rush..."
         r "It's okay, I didn't want to get home too late either."
-        scene outside
+        scene outside with fade
         "{size=40}{b}After purchasing groceries.{/b}"
-        dd "Freakin' pests {w=1}ALL {w=1}AROUND {w=1}ME!"
-        dd "YOU ALL NEED TO DIE!!"
+        dd "{size=40}{b}Freakin' pests ALL {w=.5}AROUND {w=.5}ME!{/b}"
+        dd "{size=40}{b}YOU ALL NEED TO DIE!!{/b}"
         j "Why did we go back this way..."
+        r "I forgot about him..."
+        dd "{size=50}{b}{cps=25}YOU BARNEYS!!{/b}" with vpunch
+        r "I think we should run."
+        j "Yeah, definitely."
+        dd "{size=50}{b}{cps=25}I'LL KILL YOU BOTH, I SWEAR!!{/b}" with vpunch
+
     else:
         j "I know you did that because you're scared of being associated with him. But it wouldn't have been a huge deal if we just a conversation with him."
         r "I don't care, Jack. Talking to him would have been a waste of our time."
