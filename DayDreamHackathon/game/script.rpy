@@ -365,7 +365,10 @@ label p3c:
                             j "You wanna know the chisme, Nick??"
                             n "Oh yeah, I'm all for that."
                             r "The officer from yester-{w=.3}{nw}" with fade
-                            j "The one that wears green... Their name is Rabbi. They hired the DDawg officer to beat "
+                            j "The one that wears green... Their name is Rabbi. They hired the DDawg officer to beat you up."
+                            r "Jack, what are you sayi-{w=.3}"
+                            j "They're outside right now. I packed them up for you."
+                            jump 
                         "Leave it be, you don't gossip.":
                             j "Let's not involve ourselves in that..."
 
@@ -375,17 +378,9 @@ label p3c:
                 if t_points >=1:
                     "{size=50}{b}WHACK{/b}" with vpunch
                     scene black
-                    r "Glad we got this idiot out of the way."
-                    "{size=40}{i}Your decisions throughout this game led to Jack {b}trusting you{/b}.{/i}"
-                    "{size=40}{i}After having a private call with the Dillon, you were ultimately bribed to out him out and eliminate him.{/i}"
-                    "{size=40}{i}With his trust, you were able to attack him while his guard was down.{/i}"
-                    "{size=40}{i}Maybe next time you can make better decisions to turn the tables.{/i}"
+                    jump jack
                 else:
-                    "{size=50}{b}WHACK{/b}" with vpunch
-                    j "Sorry, Rabbi... I just don't think this will work out."
-                    "{size=40}{i}Your decisions throughout this game led to Jack {b}not trusting you{/b}.{/i}"
-                    "{size=40}{i}He believes taking you out is a sacrifice worth taking to keep his freedom and sanity.{/i}"
-                    "{size=40}{i}Maybe next time you can make better decisions to turn the tables.{/i}"
+                    jump rabbi
 
                 
 
@@ -399,7 +394,21 @@ label gossip:
     r "Yeah I think you should do something about that."
     n "Yeahhhhh ehhhh no chance fam this goober done mod tingz eh"
     j "*starts frat flicking*"
+    scene gossip_g with fade
+
+label jack:
+    r "Glad we got this idiot out of the way."
+    "{size=40}{i}Your decisions throughout this game led to Jack {b}trusting you{/b}.{/i}"
+    "{size=40}{i}After having a private call with the Dillon, you were ultimately bribed to out him out and eliminate him.{/i}"
+    "{size=40}{i}With his trust, you were able to attack him while his guard was down.{/i}"
+    "{size=40}{i}Maybe next time you can make better decisions to turn the tables.{/i}"
+    return
+
+label rabbi:
+    "{size=50}{b}WHACK{/b}" with vpunch
+    j "Sorry, Rabbi... I just don't think this will work out."
+    "{size=40}{i}Your decisions throughout this game led to Jack {b}not trusting you{/b}.{/i}"
+    "{size=40}{i}He believes taking you out is a sacrifice worth taking to keep his freedom and sanity.{/i}"
+    "{size=40}{i}Maybe next time you can make better decisions to turn the tables.{/i}"
     scene gossip_b with fade
-label no_gossip:
-    j "So we're just avoiding everything at this point."
-    r ""
+    return
