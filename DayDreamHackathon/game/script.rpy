@@ -93,7 +93,7 @@ label start2:
     scene outside with fade
     #add beating up sfx
 
-    "{size=40}{b}{color=#589c51}Outside.{/b}{/color}" #walking
+    "{size=40}{b}{color=#589c51}OUTSIDE{/b}{/color}" #walking
     dd "Shut up and stop resisting."
     s "YOU CAN'T DO THIS! I DIDN'T DO ANYTHING WRONG!"
     dd "You're hurting my ears. I better shut you up."
@@ -142,7 +142,6 @@ label p2b:
 
 label ddd:
     scene doffice with fade
-    ""
     "{size=40}{b}{color=#589c51}DDAWG HEADQUARTERS{/b}{/color}"
     dd "Boss... T-they.."
     d "What's wrong, number 1078? Use your words."
@@ -194,7 +193,7 @@ label start3:
     j "Let's go check."
     
     scene building with fade
-    "{size=40}{b}{color=#589c51}Outside.{/b}{/color}"
+    "{size=40}{b}{color=#589c51}OUTSIDE{/b}{/color}"
     j "I saw someone run towards that building."
     r "Are you sure we should check it out?"
     r "I'm pretty sure screaming means something BAD happened."
@@ -204,7 +203,7 @@ label start3:
     r "Okay..."
 
     scene warehouse with fade
-    "{size=40}{b}{color=#589c51}Warehouse.{/b}{/color}"
+    "{size=40}{b}{color=#589c51}WAREHOUSE{/b}{/color}"
     
     if stranger_help == True:
         u "You two!"
@@ -274,14 +273,14 @@ label p3b:
     j "Yeah, that might be beneficial. We'll see you another day, Nick. Stay safe!"
     n "You guys as well. Have a good one!"
     scene around_warehouse1 with fade
-    "{size=40}{b}{color=#589c51}Breakroom.{/b}{/color}"
+    "{size=40}{b}{color=#589c51}BREAKROOM{/b}{/color}"
     r "See anything around here?"
     j "Nah, just some snacks. {w=.5}Want some?"
     r "No, thank you."
     j "I feel like a little detective running around the building."
     r "I guess that's what we're kind of doing, haha."
     scene around_warehouse2 with fade
-    "{size=40}{b}{color=#589c51}Control room.{/b}{/color}"
+    "{size=40}{b}{color=#589c51}CONTROL ROOM{/b}{/color}"
     u "..."
     j "Oops, didn't think there were people still in here."
     if stranger_help ==  True:
@@ -302,6 +301,7 @@ label p3c:
     j "Hey, we have s-{w=.3}{nw}"
     r "No, sorry we have to go now."
     scene front
+    "{size=40}{b}{color=#589c51}OUTSIDE{/b}{/color}"    
     if stranger_help == True:
         j "So what do we have to do today?"
         r "Well, we're not super busy today but I was thinking of going to get some groceries."
@@ -317,7 +317,10 @@ label p3c:
         r "I think we should run."
         j "Yeah, definitely."
         dd "{size=50}{b}{cps=25}I'LL KILL YOU BOTH, I SWEAR!!{/b}" with vpunch
+    else:
+        dd "Yeah, what a guy!"
+        dd "I know, and then "
 
     else:
-        j "I know you did that because you're scared of being associated with him. But it wouldn't have been a huge deal if we just a conversation with him."
+        j "I know you did that because you're scared of being associated with him. But it wouldn't have been a huge deal if we just had a conversation with him."
         r "I don't care, Jack. Talking to him would have been a waste of our time."
